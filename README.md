@@ -8,24 +8,21 @@ Dateien, Konfigurationen und Hinweise für das Ansible Training.
 - https://atom.io
 - https://www.jetbrains.com/idea/
 
+## Wichtiges
+
+- VMs werden via cloud-init vorkonfiguriert
+- EPEL und Puppet Repository sind bereits eingebunden
+- Ansible, Puppet und Docker sind bereits vorinstalliert
+- SSH Verbindung benoetigt einen halbwegs aktuellen Client
+- Git Bare Repo in /opt, ausgecheckt in /root
+- Hooks fuer lokales arbeiten sind vorkonfiguriert
+
 ## Benutzung
 
-- Provisionierung der CentOS VMs via Cloud Interface
-- Verbindung zum Ansible Control Host
-- Manuelle Installation von ansible und git
-- Checkout des Repositories, z.B. nach /root
-- VMs im Ansible Inventory konfigurieren
-- Basisinstallation via Ansible Playbook durchführen
-  - Installierte Standardpakete, Ansible und Docker
-  - Hardening von SSHD (aktueller SSH Client nötig)
+- Falls gewuenscht den eigenen SSH Key hinterlegen
+- Checkout des Repositories vom Control Host
 ```
-ansible-playbook playbooks/setup.yml
+git clone root@123.123.123.123:/opt/ansible-labs.git
 ```
-- Git Remote ändern und Bare Repo füllen
-```
-git remote set-url origin root@123.123.123.123:/opt/ansible-labs.git
-git push --set-upstream origin master
-```
-- Falls gewünscht Repo lokal mit der gewünschten IDE auschecken
+- Alternativ kann auch lokal via vim oder nano gearbeitet werden
 
-## Befehle
