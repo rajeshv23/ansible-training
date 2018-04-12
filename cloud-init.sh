@@ -8,4 +8,4 @@ cd /root
 ) > localhost.ini
 git clone https://github.com/slauger/ansible-training.git
 cd /root/ansible-training
-ansible -i /root/localhost.ini playbooks/setup.yml
+ansible-playbook -i /root/localhost.ini playbooks/setup.yml
