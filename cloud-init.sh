@@ -15,7 +15,7 @@ cd /root
 ) > localhost.ini
 git clone https://github.com/slauger/ansible-training.git
 cd /root/ansible-training
-ansible-playbook -i /root/localhost.ini playbooks/setup.yml &> /root/cloud-init.log
+ansible-playbook -i /root/localhost.ini playbooks/setup.yml &> /root/ansible-init.log
 
 (
 echo ' _            _       _         '
