@@ -1,4 +1,5 @@
 #!/bin/bash
+# curl https://raw.githubusercontent.com/slauger/ansible-training/master/cloud-init.sh | bash
 
 (
 echo 'SYSTEM IS NOT READY - PLEASE WAIT UP TO 120 SECONDS'
