@@ -1,0 +1,10 @@
+---
+
+- name: install git packages
+  yum:
+    name: git
+    state: present
+
+- name: add git user to system
+  user:
+    name: 

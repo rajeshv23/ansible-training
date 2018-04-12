@@ -1,0 +1,8 @@
+---
+- name: setup lab environment
+  hosts: all
+  tasks:
+  - import_role:
+      name: setup
+  - debug:
+      msg: "finished"
