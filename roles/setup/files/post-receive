@@ -1,0 +1,4 @@
+#!/bin/bash
+datetime=$(date +'%d.%m.%Y %H:%M:%S')
+echo "${datetime}: running post-recevie hook"
+git pull --git-dir=/root/ansible-training/.git

@@ -89,9 +89,15 @@
     - "[ ! -d /opt/ssh-audit ] && git clone https://github.com/arthepsy/ssh-audit.git /opt/ssh-audit"
   ignore_errors: yes
 
-- name: create git repository
-  shell: "{{ item }}"
-  with_items:
-    - "[ ! -d /opt/ansible-labs.git ] && mkdir /opt/ansible-labs.git"
-    - "cd /opt/ansible-labs.git && git init --bare"
-  ignore_errors: yes
+# - name: create git bare repository
+#  shell: "{{ item }}"
+#  with_items:
+#    - "[ ! -d /opt/ansible-training.git ] && mkdir /opt/ansible-training.git"
+#    - "cd /opt/ansible-training.git && git clone --bare /"
+#  ignore_errors: yes
+
+- name: install post-recevie hook for git
+  copy:
+    src: post-receive
+    dest: /opt/ansible-training.git/hooks/post-receive
+    mode: 0755

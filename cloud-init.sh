@@ -12,10 +12,18 @@ cd /root
 (
   echo "[local]"
   echo "localhost ansible_connection=local"
-) > localhost.ini
-git clone https://github.com/slauger/ansible-training.git
-cd /root/ansible-training
-ansible-playbook -i /root/localhost.ini playbooks/setup.yml &> /root/ansible-init.log
+) > /etc/ansible/hosts
+
+# clone bare
+cd /opt
+git clone --bare https://github.com/slauger/ansible-training.git
+
+# clone working dir
+cd /root
+git clone /opt/ansible-training.git
+
+# run playbook
+ansible-playbook playbooks/setup.yml &> /root/ansible-init.log
 
 (
 echo ' _            _       _         '
