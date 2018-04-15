@@ -23,6 +23,7 @@ cd /root
 git clone /opt/ansible-training.git
 
 # run playbook
+cd /root/ansible-training
 ansible-playbook playbooks/setup.yml &> /root/ansible-init.log
 
 (
