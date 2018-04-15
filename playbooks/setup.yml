@@ -1,6 +1,6 @@
 ---
 - name: setup lab environment
-  hosts: all
+  hosts: localhost
   tasks:
   - import_role:
       name: setup
