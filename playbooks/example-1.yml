@@ -1,0 +1,38 @@
+---
+- name: setup base environment
+  hosts: all
+  vars:
+    extra_packages:
+      - php
+  tasks:
+    - name: ensure that httpd is installed
+      package:
+        name: httpd
+        state: present
+    - name: create httpd configuration
+      copy:
+        content: "# local config"
+        dest: "/etc/httpd/conf.d/99local.conf"
+        mode: 0644
+        owner: root
+        group: root
+        notify: restart_httpd
+    - name: ensure that httpd is started
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+    - name: install extra packages
+      with_items: "{{ extra_packages }}"
+      when: extra_packages is defined
+  tasks:
+    - name: import setup role
+      import_role:
+        name: setup
+    - debug:
+        msg: "finished"
+  handlers:
+    - name: restart_httpd
+      service:
+        name: httpd
+        state: restarted
