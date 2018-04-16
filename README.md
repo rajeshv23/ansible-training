@@ -22,7 +22,7 @@ Dateien, Konfigurationen und Hinweise für das Ansible Training.
 - Falls gewuenscht den eigenen SSH Key hinterlegen
 - Checkout des Repositories vom Control Host
 ```
-git clone root@123.123.123.123:/opt/ansible-labs.git
+git clone root@123.123.123.123:/opt/ansible-training.git
 ```
 - Alternativ kann auch lokal via vim oder nano gearbeitet werden
 
