@@ -1,0 +1,13 @@
+---
+
+- name: setup webserver
+  hosts: webserver
+  roles:
+    - webserver
+  tags: webserver
+
+- name: setup loadbalancer
+  hosts: lb
+  roles:
+    - lb
+  tags: lb

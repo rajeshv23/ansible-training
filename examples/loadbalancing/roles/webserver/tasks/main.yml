@@ -1,0 +1,19 @@
+---
+- name: install apache
+  package:
+    name: httpd
+- name: enable and start apache
+  service:
+    name: httpd
+    state: started
+    enabled: yes
+  notify: restart_apache
+  
+- name: ping to google
+  shell: "ping -c1 www.google.de"
+  register: ping_result
+
+- name: create index.html
+  template:
+    src: index.html.j2
+    dest: /var/www/html/index.html

@@ -1,0 +1,4 @@
+---
+lb_servers:
+  - web01
+  - web02
